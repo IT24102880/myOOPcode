@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy planet Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="KalharaStyle.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Layer 1.png" alt="ToyStore logo" class="logo-img">
+        </div>
+        
+        <div class="search">
+            <input type="text" placeholder="🔍Search Here...">
+        </div>
+        
+        <div class="user-options">
+            <a href="#" id="premium-btn">premium👑</a>
+            <a href="#" id="profile-btn">User Update</a>
+            <a href="#" class="highlight" id="logout-btn">Logout↪️</a>
+            <a href="#" id="cart-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        </div>
+    </nav>
+    
+
+    <!-- Auth Forms Overlay -->
+    <div class="overlay" id="auth-overlay">
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div class="auth-wrapper" id="login-wrapper">
+                <span class="icon_close close-btn" id="register-close-btn">
+                    <i class="fas fa-times"></i>
+                </span>
+                <form action="">
+                    <h3>😉Hi, Welcome to Toy Store❤</h3>
+                    <h1>Log in📩</h1>
+                    <div class="inputBox">
+                        <input type="text" placeholder="Username" required id="login-username">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="Password" required id="login-password">
+                        <i class='bx bx-lock-alt'></i>
+                    </div>
+                    
+                    <button type="button" class="btn" id="login-submit">Login</button>
+                </form>
+                <div class="register_link">
+                    <p>Don't have an account? <a href="#" id="show-register">Sign up</a></p>
+                </div>
+                <h4>Powered by Y1 S2 PG 118 (SLIIT)</h4>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-wrapper hidden" id="register-wrapper">
+                <span class="icon_close close-btn" id="login-close-btn">
+                    <i class="fas fa-times"></i>
+                </span>
+                <form action="" id="register-form">
+                    <h2>Register</h2>
+                    <div class="inputBox">
+                        <input type="text" placeholder="User Name" required id="reg-username">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" placeholder="Email" required id="reg-email">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="Password" required id="reg-password">
+                        <i class='bx bx-lock'></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="Confirm Password" required id="reg-confirm-password">
+                        <i class='bx bx-lock'></i>
+                    </div>
+                    <button type="button" class="btn" id="register-submit">Sign me up</button>
+                </form>
+                <div class="register_link">
+                    <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Overlay -->
+    <div class="overlay hidden" id="forgot-overlay">
+        <div class="auth-container">
+            <div class="auth-wrapper">
+                <span class="icon_close close-btn">
+                    <i class="fas fa-times"></i>
+                </span>
+                <form action="" id="forgot-form">
+                    <h1>Reset Password</h1>
+                    <div class="inputBox">
+                        <input type="password" placeholder="New Password" required id="new-password">
+                        <i class='bx bx-lock-alt'></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" placeholder="Confirm Password" required id="confirm-new-password">
+                        <i class='bx bx-lock-alt'></i>
+                    </div>
+                    <button type="button" class="btn" id="reset-password-btn">Update Password</button>
+                </form>
+                <div class="register_link">
+                    <p>Remember your password? <a href="#" id="show-login-from-forgot">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Update Overlay -->
+    <div class="overlay hidden" id="profile-overlay">
+        <div class="profile-container">
+            <span class="icon_close close-btn">
+                <i class="fas fa-times"></i>
+            </span>
+            <form class="profile-form">
+                <h1>Edit Profile</h1>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Save Changes</button>
+                    <a href="#" class="cancel-link close-btn">Cancel and go back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay hidden" id="premium-overlay">
+        <div class="premium-container">
+            <div class="premium-wrapper">
+                <span class="icon_close close-btn">
+                    <i class="fas fa-times"></i>
+                </span>
+                <form class="premium-form">
+                    <h3>Try premium</h3>
+                    <h4>enjoy free delivery and 20% discount</h4>
+                    <button type="button" class="btn" id="get-premium-btn">Get Premium</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Success premium (initially hidden) -->
+        <div class="overlay hidden" id="premium-overlay2">
+            <div class="premium-container">
+                <div class="premium2-wrapper">
+                    <span class="icon-close close-btn">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <form class="premium-success">
+                        <h1> Enjoy</h1>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--log out-->
+<!-- Add this to your existing HTML, preferably near other overlay definitions -->
+<div class="overlay hidden" id="logout-overlay">
+    <div class="logout-dialog">
+        <div class="dialog-content">
+            <div class="logout-title">Log Out</div>
+            <div class="logout-message">Are you sure you want to log out?</div>
+            <div class="button-group">
+                <button class="btn btn-cancel" id="logout-cancel-btn">Cancel</button>
+                <button class="btn btn-logout" id="logout-confirm-btn">Log Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- cart overlay-->
+    <div class="overlay hidden" id="cart-overlay">
+        <div class="cart-container">
+            <span class="icon_close close-btn">
+                <i class="fas fa-times"></i>
+            </span>
+            <h1>Your Cart</h1>
+            <div class="cart-content">
+                <p>Your cart is currently empty.</p>
+            </div>
+        </div>
+    </div>
+    <script src="Kalharascrypt.js"></script> 
+</body>
+</html>
